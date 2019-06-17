@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- font files  -->
+<link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+<!-- /font files  -->
+<!-- css files -->
+{% load static %}
+<link href="{% static '/blog/css/style.css' %}" rel='stylesheet' type='text/css' media="all" />
+<!-- /css files -->
+<script src="{% static '/blog/js/jquery-2.1.4.min.js' %}"></script>
+<script src="{% static '/blog/js/jquery.form.js' %}"></script>
+</head>
+<body>
+<h1>个人博客系统</h1>
+<div class="log">
+	<div class="content1">
+		<h2>Sign In Form</h2>
+		<form  method="post">
+			{% csrf_token %}
+			<input class="user" type="text" name="user" value="USERNAME" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}" required>
+			<input type="password" class="pwd" name="pwd" value="PASSWORD" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'PASSWORD';}" required>
+			 <input type="text" name="code" id="code" class="code" required><br><br>
+            <img src="/blog/code/" alt="" onclick="check_code(this)">
+			<div class="button-row">
+				<button type="button" class="sign-in" value="登录" id="btn">登录</button>
+				<input type="reset" class="reset" value="注册" onclick="window.location.href='/blog/regist'">
+				<div class="clear"></div>
+			</div>
+		</form>
+	</div>
+	<div class="clear"></div>
+</div>
+<div class="footer">
+	<p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="啦啦啦">啦啦啦</a> - Collect from <a href="http://www.cssmoban.com/" title="啦啦啦" target="_blank">啦啦啦</a></p>
+</div>
+<script>
+	let a=0;
+     function check_code(node) {
+        node.src = '/blog/code/?search=' + Math.random();
+     }
+     $("#btn").on("click",function(){
+            $.ajax({
+                url :"/blog/login/",
+                type:"POST",
+                dataType : "Json",
+                success:function(user){
+					for(let i=0;i<user["user"].length;i++){
+                		if(user["user"][i]["fields"]["username"]==$(".user").val())
+                		{
+                			if(user["user"][i]["fields"]["pwd"]==$(".pwd").val())
+                			{
+                				console.log(user["user"][i]["fields"]["id"]);
+                				if(user["code"]==$(".code").val())
+                				{
+
+                					alert("登录成功");
+                					a = 1;
+                					window.location.href="/blog/login_success/"+user["user"][i]["pk"]+"/";
+                				}
+                			}
+                		}
+                	}
+                	if(a==0)
+                	{
+                		alert("登录失败，用户名密码或验证码错误！")
+                	}
+                }
+            });
+        });
+</script>
+</body>
+</html>

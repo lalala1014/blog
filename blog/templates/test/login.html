@@ -1,0 +1,171 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Karigor - Portfolio Bootstrap4 Template</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Favicon -->
+    {% load static %}
+	<link rel="shortcut icon" href="{% static '/blog/img/favicon.ico' %}" type="image/x-icon">
+	<link rel="apple-touch-icon" href="{% static '/blog/img/icon.png' %}">
+
+	<!-- Google font (font-family: 'Dosis', sans-serif;) -->
+	<link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet">
+
+	<!-- Plugins -->
+	<link rel="stylesheet" href="{% static '/blog/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static '/blog/css/plugins.css' %}">
+
+	<!-- Style Css -->
+	<link rel="stylesheet" href="{% static '/blog/css/styleindex.css' %}">
+
+	<!-- Custom Styles -->
+	<link rel="stylesheet" href="{% static '/blog/css/custom.css' %}">
+</head>
+
+<body>
+{% load static %}
+	<!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+	<!-- Add your site or application content here -->
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="wrapper">
+
+		<span class="cursor"></span>
+
+		<!-- Header -->
+		<header class="header sticky-header fixed-header">
+			<div class="container">
+				<div class="header-inner d-none d-lg-flex">
+					<div class="header-logo">
+						{% load static %}
+						<img src="{% static '/blog/img/icon.png' %}" alt="头像" width="40" height="40">&nbsp;&nbsp;
+						<a href="index.html" class="main-navigation" >
+							User
+						</a>
+					</div>
+					<div class="header-navigation">
+						<button class="header-navigation-trigger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+						<nav class="main-navigation">
+							<ul>
+                                <li><a href="/blog/login_success">HOME</a></li>
+								<li><a href="about.html">ABOUT US</a></li>
+                                <li><a href="portfolio.html">PORTFOLIO</a></li>
+                                <li><a href="blog.html">BLOG</a></li>
+								<li><a href="pricing.html">PRICING</a></li>
+								<li><a href="services.html">SERVICES</a></li>
+								<li><a href="contact.html">CONTACT</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="mobile-menu-wrapper d-block d-lg-none">
+					<div class="mobile-menu clearfix">
+						<a href="index.html" class="mobile-logo">
+							<img src="{% static '/blog/img/logo-dark.png' %}" alt="mobile logo">
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--// Header -->
+		<div class="tlinks">Collect from <a href="http://www.cssmoban.com/" >网页模板</a></div>
+		<!-- Hero Area -->
+		<div class="hero-area bg-white">
+			<div class="container">
+				<div class="hero-area-inner">
+					<div class="hero-area-text">
+						<h1>
+							HELLO, <br>
+							I AM  MAKX  REZ...
+						</h1>
+						<h5>PROFESSIONAL _WEB DESIGNER & DEVELOPER</h5>
+						<a href="about.html" class="readmore">TEXT</a>
+					</div>
+					<div class="hero-area-image">
+						<img src="{% static '/blog/img/slider/slider-image-1.png' %}" alt="man mask">
+					</div>
+					<div class="social-icons">
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--// Hero Area -->
+
+		<!-- Page Conttent -->
+		<main class="page-content">
+
+			<!-- Portfolios Ara -->
+			<div class="cr-section portfolios-area section-padding-lg bg-white">
+				<div class="container">
+
+					<div class="row">
+						<div class="col-lg-3"></div>
+                        <div class="col-lg-6">
+                            <div class="about-content">
+                                <h2>{{title}}</h2>
+
+                                <p>{{content}}</p>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+			<!--// Portfolios Ara -->
+
+			<!-- Service Area -->
+
+			<!--// Service Area -->
+
+		</main>
+		<!--// Page Conttent -->
+
+		<!-- Footer Area -->
+		<footer class="footer-area bg-white">
+			<div class="container">
+				<ul class="footer-inner">
+					<li>34/5 evergreen road, concord city <br> New work, United States</li>
+					<li><a href="tel://+008341237654">+800 820 8820 99</a></li>
+					<li><a href="mailto://info@example.com">info@example.com</a></li>
+					<li>Copyright &copy; More Templates <a href="http://www.cssmoban.com/" target="_blank" title="啦啦啦">啦啦啦</a> - Collect from <a href="http://www.cssmoban.com/" title="啦啦啦" target="_blank">啦啦啦</a></li>
+				</ul>
+			</div>
+		</footer>
+		<!--// Footer Area -->
+
+	</div>
+	<!--// Wrapper -->
+
+	<!-- Js Files -->
+{% load static %}
+	<script src="{% static 'blog/js/vendor/modernizr-3.6.0.min.js' %}"></script>
+	<script src="{% static 'blog/js/vendor/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'blog/js/popper.min.js' %}"></script>
+	<script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'blog/js/plugins.js' %}"></script>
+	<script src="{% static 'blog/js/main.js' %}"></script>
+</body>
+
+
+
+
+</html>

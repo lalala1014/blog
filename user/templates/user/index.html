@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <center>
+        <h1>首页</h1>
+        <button onClick='window.location.href="/user/login"'>登录</button><br><br>
+        <button onClick='window.location.href="/user/regist"'>注册</button>
+
+        <br>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            用户名：<input type="text" name="user">
+            <input type="submit" value="提交">
+        </form>
+        <br>
+        <a href='{% url "lalala:login" %}'>lalaa</a>
+         <br>
+        {% load static %}
+        <img src='{% static "/user/image/1.jpg" %}' alt="这是一个图片">
+        <br>
+        {% if user.age > 50 %}
+            姓名：{{user}}
+        {% else %}
+            不输入
+        {% endif %}
+
+        {% for i in student %}
+
+            {% if i.age > 50 %}
+                {{i}}
+            {% else %}
+                没有符合
+            {% endif %}
+
+        {% endfor %}
+
+    </center>
+</body>
+</html>

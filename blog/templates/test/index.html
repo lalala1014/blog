@@ -1,0 +1,337 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Karigor - Portfolio Bootstrap4 Template</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Favicon -->
+    {% load static %}
+	<link rel="shortcut icon" href="{% static '/blog/img/favicon.ico' %}" type="image/x-icon">
+	<link rel="apple-touch-icon" href="{% static '/blog/img/icon.png' %}">
+
+	<!-- Google font (font-family: 'Dosis', sans-serif;) -->
+	<link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet">
+
+	<!-- Plugins -->
+	<link rel="stylesheet" href="{% static '/blog/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static '/blog/css/plugins.css' %}">
+
+	<!-- Style Css -->
+	<link rel="stylesheet" href="{% static '/blog/css/styleindex.css' %}">
+
+	<!-- Custom Styles -->
+	<link rel="stylesheet" href="{% static '/blog/css/custom.css' %}">
+</head>
+
+<body>
+{% load static %}
+	<!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+	<!-- Add your site or application content here -->
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="wrapper">
+
+		<span class="cursor"></span>
+
+		<!-- Header -->
+		<header class="header sticky-header fixed-header">
+			<div class="container">
+				<div class="header-inner d-none d-lg-flex">
+					<div class="header-logo">
+						{% load static %}
+						<img src="{% static '/blog/img/icon.png' %}" alt="头像" width="40" height="40">&nbsp;&nbsp;
+						<a href="index.html" class="main-navigation" >
+							User
+						</a>
+					</div>
+					<div class="header-navigation">
+						<button class="header-navigation-trigger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+						<nav class="main-navigation">
+							<ul>
+                                <li><a href="index.html">HOME</a></li>
+								<li><a href="about.html">ABOUT US</a></li>
+                                <li><a href="portfolio.html">PORTFOLIO</a></li>
+                                <li><a href="blog.html">BLOG</a></li>
+								<li><a href="pricing.html">PRICING</a></li>
+								<li><a href="services.html">SERVICES</a></li>
+								<li><a href="contact.html">CONTACT</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="mobile-menu-wrapper d-block d-lg-none">
+					<div class="mobile-menu clearfix">
+						<a href="index.html" class="mobile-logo">
+							<img src="{% static '/blog/img/logo-dark.png' %}" alt="mobile logo">
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--// Header -->
+		<div class="tlinks">Collect from <a href="http://www.cssmoban.com/" >网页模板</a></div>
+		<!-- Hero Area -->
+		<div class="hero-area bg-white">
+			<div class="container">
+				<div class="hero-area-inner">
+					<div class="hero-area-text">
+						<h1>
+							HELLO, <br>
+							I AM  MAKX  REZ...
+						</h1>
+						<h5>PROFESSIONAL _WEB DESIGNER & DEVELOPER</h5>
+						<a href="about.html" class="readmore">ABOUT ME</a>
+					</div>
+					<div class="hero-area-image">
+						<img src="{% static '/blog/img/slider/slider-image-1.png' %}" alt="man mask">
+					</div>
+					<div class="social-icons">
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--// Hero Area -->
+
+		<!-- Page Conttent -->
+		<main class="page-content">
+
+			<!-- Portfolios Ara -->
+			<div class="cr-section portfolios-area section-padding-lg bg-white">
+				<div class="container">
+
+					<div class="portfolio-filters text-center">
+						<button data-filter="*" class="is-checked">ALL</button>
+						<button data-filter=".portfolio-filter-graphic">GRAPHIC</button>
+						<button data-filter=".portfolio-filter-photoshop">PHOTOSHOP</button>
+						<button data-filter=".portfolio-filter-design">DESIGN</button>
+					</div>
+
+					<div class="row">
+                        <div class="col-lg-6">
+                            <div class="about-image">
+                                <img src="{% static '/blog/img/others/about-image.jpg' %}" alt="about image">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="about-content">
+                                <h2>WELCOME TO <strong>KARIGOR</strong> WORLD</h2>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis odio dignissimos ut illum necessitatibus veritatis velit explicabo harum rerum non consequuntur, est consectetur optio similique expedita iusto maiores esse saepe.</p>
+                                <ul>
+									 {% for i in text %}
+                					{% if i.author_id == author %}
+                                    <li><a href="" style="font-family:yiqi">{{i.title}}</a></li>
+                                    {% endif %}
+                 					{% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+			<!--// Portfolios Ara -->
+
+			<!-- Service Area -->
+			<div class="cr-section services-area section-padding-bottom-lg bg-white">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-7">
+							<div class="section-title text-center">
+								<h2>WHICH I PROVIDE</h2>
+								<p>Here is the services which i know & provide all the time</p>
+							</div>
+						</div>
+					</div>
+					<div class="row portfolios-wrapper portfolios-zoom-button-holder">
+
+						<!-- Single Portfolio -->
+						<div class="col-lg-4 col-md-6 col-12 portfolio-item portfolio-filter-graphic portfolio-filter-design">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img src="{% static '/blog/img/portfolio/portfolio-image-1.jpg' %}" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a href="{% static '/blog/img/portfolio/lg-size/portfolio-image-lg-1.jpg' %}" class="portfolio-zoom-button"></a>
+									<h5><a href="portfolio-details.html">AWESOME RACING CAR</a></h5>
+									<h6><a href="portfolio.html">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+						<!--// Single Portfolio -->
+
+						<!-- Single Portfolio -->
+						<div class="col-lg-4 col-md-6 col-12 portfolio-item portfolio-filter-graphic">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img src="{% static '/blog/img/portfolio/portfolio-image-2.jpg' %}" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a href="{% static '/blog/img/portfolio/lg-size/portfolio-image-lg-2.jpg' %}" class="portfolio-zoom-button"></a>
+									<h5><a href="portfolio-details.html">AWESOME RACING CAR</a></h5>
+									<h6><a href="portfolio.html">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+						<!--// Single Portfolio -->
+
+						<!-- Single Portfolio -->
+						<div class="col-lg-4 col-md-6 col-12 portfolio-item portfolio-filter-photoshop portfolio-filter-design">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img src="{% static '/blog/img/portfolio/portfolio-image-3.jpg' %}" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a href="{% static '/blog/img/portfolio/lg-size/portfolio-image-lg-3.jpg' %}" class="portfolio-zoom-button"></a>
+									<h5><a href="portfolio-details.html">AWESOME RACING CAR</a></h5>
+									<h6><a href="portfolio.html">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+						<!--// Single Portfolio -->
+
+						<!-- Single Portfolio -->
+						<div class="col-lg-4 col-md-6 col-12 portfolio-item portfolio-filter-graphic portfolio-filter-design">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img src="{% static '/blog/img/portfolio/portfolio-image-4.jpg' %}" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a href="{% static '/blog/img/portfolio/lg-size/portfolio-image-lg-4.jpg' %}" class="portfolio-zoom-button"></a>
+									<h5><a href="portfolio-details.html">AWESOME RACING CAR</a></h5>
+									<h6><a href="portfolio.html">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+						<!--// Single Portfolio -->
+
+						<!-- Single Portfolio -->
+						<div class="col-lg-4 col-md-6 col-12 portfolio-item portfolio-filter-photoshop">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img src="{% static '/blog/img/portfolio/portfolio-image-5.jpg' %}" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a href="{% static '/blog/img/portfolio/lg-size/portfolio-image-lg-5.jpg' %}" class="portfolio-zoom-button"></a>
+									<h5><a href="portfolio-details.html">AWESOME RACING CAR</a></h5>
+									<h6><a href="portfolio.html">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+						<!--// Single Portfolio -->
+
+						<!-- Single Portfolio -->
+						<div class="col-lg-4 col-md-6 col-12 portfolio-item portfolio-filter-photoshop portfolio-filter-design">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img src="{% static '/blog/img/portfolio/portfolio-image-6.jpg' %}" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a href="{% static '/blog/img/portfolio/lg-size/portfolio-image-lg-6.jpg' %}" class="portfolio-zoom-button"></a>
+									<h5><a href="portfolio-details.html">AWESOME RACING CAR</a></h5>
+									<h6><a href="portfolio.html">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+						<!--// Single Portfolio -->
+
+						<!-- Single Portfolio -->
+						<div class="col-lg-4 col-md-6 col-12 portfolio-item portfolio-filter-graphic">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img src="{% static '/blog/img/portfolio/portfolio-image-7.jpg' %}" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a href="{% static '/blog/img/portfolio/lg-size/portfolio-image-lg-7.jpg' %}" class="portfolio-zoom-button"></a>
+									<h5><a href="portfolio-details.html">AWESOME RACING CAR</a></h5>
+									<h6><a href="portfolio.html">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+						<!--// Single Portfolio -->
+
+						<!-- Single Portfolio -->
+						<div class="col-lg-4 col-md-6 col-12 portfolio-item portfolio-filter-design">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img src="{% static '/blog/img/portfolio/portfolio-image-8.jpg' %}" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a href="{% static '/blog/img/portfolio/lg-size/portfolio-image-lg-8.jpg' %}" class="portfolio-zoom-button"></a>
+									<h5><a href="portfolio-details.html">AWESOME RACING CAR</a></h5>
+									<h6><a href="portfolio.html">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+						<!--// Single Portfolio -->
+
+						<!-- Single Portfolio -->
+						<div class="col-lg-4 col-md-6 col-12 portfolio-item portfolio-filter-graphic portfolio-filter-design">
+							<div class="portfolio">
+								<div class="portfolio-image">
+									<img src="{% static '/blog/img/portfolio/portfolio-image-9.jpg' %}" alt="portfolio image">
+								</div>
+								<div class="portfolio-content">
+									<a href="{% static '/blog/img/portfolio/lg-size/portfolio-image-lg-9.jpg' %}" class="portfolio-zoom-button"></a>
+									<h5><a href="portfolio-details.html">AWESOME RACING CAR</a></h5>
+									<h6><a href="portfolio.html">PORTFOLIO</a></h6>
+								</div>
+							</div>
+						</div>
+						<!--// Single Portfolio -->
+
+					</div>
+				</div>
+			</div>
+			<!--// Service Area -->
+
+		</main>
+		<!--// Page Conttent -->
+
+		<!-- Footer Area -->
+		<footer class="footer-area bg-white">
+			<div class="container">
+				<ul class="footer-inner">
+					<li>34/5 evergreen road, concord city <br> New work, United States</li>
+					<li><a href="tel://+008341237654">+800 820 8820 99</a></li>
+					<li><a href="mailto://info@example.com">info@example.com</a></li>
+					<li>Copyright &copy; More Templates <a href="http://www.cssmoban.com/" target="_blank" title="啦啦啦">啦啦啦</a> - Collect from <a href="http://www.cssmoban.com/" title="啦啦啦" target="_blank">啦啦啦</a></li>
+				</ul>
+			</div>
+		</footer>
+		<!--// Footer Area -->
+
+	</div>
+	<!--// Wrapper -->
+
+	<!-- Js Files -->
+{% load static %}
+	<script src="{% static 'blog/js/vendor/modernizr-3.6.0.min.js' %}"></script>
+	<script src="{% static 'blog/js/vendor/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'blog/js/popper.min.js' %}"></script>
+	<script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'blog/js/plugins.js' %}"></script>
+	<script src="{% static 'blog/js/main.js' %}"></script>
+</body>
+
+
+
+
+</html>

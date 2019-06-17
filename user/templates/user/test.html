@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/user/js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <h1>测试一下</h1>
+    <button id="btn">点击测试</button>
+    {{request.session.user.name}}
+    <script>
+        $("#btn").on("click",function(){
+            $.ajax({
+                url :"/user/test/",
+                type:"POST",
+                dataType : "Json",
+                success:function(data){
+                    alert("登录失败");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

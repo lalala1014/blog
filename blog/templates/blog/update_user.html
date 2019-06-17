@@ -1,0 +1,240 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Karigor - Portfolio Bootstrap4 Template</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Favicon -->
+    {% load static %}
+	<link rel="shortcut icon" href="{% static '/blog/img/favicon.ico' %}" type="image/x-icon">
+	<link rel="apple-touch-icon" href="{% static '/blog/img/icon.png' %}">
+
+	<!-- Google font (font-family: 'Dosis', sans-serif;) -->
+	<link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet">
+
+	<!-- Plugins -->
+	<link rel="stylesheet" href="{% static '/blog/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static '/blog/css/plugins.css' %}">
+
+	<!-- Style Css -->
+	<link rel="stylesheet" href="{% static '/blog/css/styleindex.css' %}">
+
+	<!-- Custom Styles -->
+	<link rel="stylesheet" href="{% static '/blog/css/custom.css' %}">
+	<style>
+		.file-box{
+		position: relative;
+		display: inline-block;
+		background: #f7f7f7;
+		border: 1px solid #d5d5d5;
+		border-radius: 4px;
+		padding: 4px 12px;
+		overflow: hidden;
+		color: #333333;
+		text-decoration: none;
+		text-indent: 0;
+		line-height: 20px;
+	}
+	.file-btn{
+		position: absolute;
+		font-size: 100px;
+		right: 0;
+		top: 0;
+		opacity: 0;
+	}
+	.file-box:hover{
+		background: #E0E0E0;
+		border-color: #d5d5d5;
+		color: #333333;
+		text-decoration: none;
+	}
+	.sex{
+	font-family: "Dosis", sans-serif;
+	  border: none;
+	  background: #f7f7f7;
+	  border-bottom: 3px solid #d5d5d5;
+	  height:50px;
+	  line-height:40px;
+	  padding:0 20px;
+	}
+
+	</style>
+
+</head>
+
+<body>
+{% load static %}
+	<!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+	<!-- Add your site or application content here -->
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="wrapper">
+
+		<span class="cursor"></span>
+        <!-- Header -->
+		<header class="header sticky-header">
+			<div class="container">
+				<div class="header-inner d-none d-lg-flex">
+					<div class="header-logo">
+						{% load static %}
+						<img src="{{user.head}}" alt="头像" width="40" height="40">&nbsp;&nbsp;
+						<a href="/blog/update_user/" class="main-navigation" >
+							{{user.username}}
+						</a>
+					</div>
+					<div class="header-navigation">
+						<button class="header-navigation-trigger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+						<nav class="main-navigation">
+							<ul>
+                                <li><a href="/blog/login_success/{{user.id}}">HOME</a></li>
+								<li><a href="about.html">ABOUT US</a></li>
+                                <li><a href="portfolio.html">PORTFOLIO</a></li>
+                                <li><a href="blog.html">BLOG</a></li>
+								<li><a href="pricing.html">PRICING</a></li>
+								<li><a href="services.html">SERVICES</a></li>
+								<li><a href="contact.html">CONTACT</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="mobile-menu-wrapper d-block d-lg-none">
+					<div class="mobile-menu clearfix">
+						<a href="index.html" class="mobile-logo">
+							{# <img src="" alt="mobile logo"> #}
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--// Header -->
+
+        <!-- Breadcrumb Area -->
+        <div class="breadcrumb-area bg-grey">
+            <div class="container">
+                <div class="cr-breadcrumb">
+                    <h2>个人资料</h2>
+                    <ul>
+                        <li><a href="/blog/login_success/{{user.id}}">Home</a></li>
+                        <li>个人资料</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--// Breadcrumb Area -->
+		<!-- Page Conttent -->
+		<main class="page-content">
+
+			<!-- Portfolios Ara -->
+			<div class="cr-section portfolios-area section-padding-lg bg-white">
+				<div class="container">
+
+                    <div class="row section-padding-top-lg">
+                        <div class="col-lg-12">
+                            <h4 class="small-title">
+								<span>修改个人资料</span>
+							</h4>
+                            <form enctype = "multipart/form-data" method="POST" id="contact-form" class="karigor-form">
+								{% csrf_token %}
+                                <div class="karigor-form-inner">
+                                    <div class="karigor-form-input karigor-form-input-half sex">
+										电话：
+                                        <input type="text" name="phone" value="{{user.phone}}" style="width:150px" maxlength="11">
+                                    </div>
+                                    <div class="karigor-form-input karigor-form-input-half sex">
+										邮箱：
+                                        <input type="email" name="email" value="{{user.email}}" style="width:350px">
+                                    </div>
+									<div class="karigor-form-input karigor-form-input-half sex">
+										性别：
+										{% if user.sex == "男" %}
+                                        <input type="radio" name="sex" checked="checked" value="男">&nbsp;&nbsp;男&nbsp;&nbsp;&nbsp;&nbsp;
+										 <input type="radio" name="sex" value="女">&nbsp;&nbsp;女
+										{% else %}
+										<input type="radio" name="sex"  value="男">&nbsp;&nbsp;男&nbsp;&nbsp;&nbsp;&nbsp;
+										 <input type="radio" name="sex" value="女" checked="checked">&nbsp;&nbsp;女
+										{% endif %}
+									</div>
+									<div class="karigor-form-input karigor-form-input-half sex">
+										年龄：
+										<input name="age" type="number" step="1" min="0" max="120" value={{user.age}} style="width:150px">
+									</div>
+									<div class="karigor-form-input karigor-form-input-half">
+                                        <div class="file-box" style="inline-block">
+											上传头像
+										<input class="file-btn" type="file" id="file" name="header" onchange="imgChange(this)">
+										</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<img id="imghead" src="{{user.head}}" width="200" height="200" alt="">
+                                    </div>
+                                    <div class="karigor-form-input karigor-form-input-half">
+                                        <button type="submit" class="button">
+											<span>Submit</span>
+										</button>
+                                    </div>
+                                </div>
+							</form>
+							<p class="form-message"></p>
+                        </div>
+                    </div>
+				</div>
+			</div>
+			<!--// Portfolios Ara -->
+
+			<!-- Service Area -->
+
+			<!--// Service Area -->
+
+		</main>
+		<!--// Page Conttent -->
+
+		<!-- Footer Area -->
+		<footer class="footer-area bg-white">
+			<div class="container">
+				<ul class="footer-inner">
+					<li>34/5 evergreen road, concord city <br> New work, United States</li>
+					<li><a href="tel://+008341237654">+800 820 8820 99</a></li>
+					<li><a href="mailto://info@example.com">info@example.com</a></li>
+					<li>Copyright &copy; More Templates <a href="http://www.cssmoban.com/" target="_blank" title="啦啦啦">啦啦啦</a> - Collect from <a href="http://www.cssmoban.com/" title="啦啦啦" target="_blank">啦啦啦</a></li>
+				</ul>
+			</div>
+		</footer>
+		<!--// Footer Area -->
+
+	</div>
+	<!--// Wrapper -->
+
+	<!-- Js Files -->
+{% load static %}
+	<script src="{% static 'blog/js/vendor/modernizr-3.6.0.min.js' %}"></script>
+	<script src="{% static 'blog/js/vendor/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'blog/js/popper.min.js' %}"></script>
+	<script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'blog/js/plugins.js' %}"></script>
+	<script src="{% static 'blog/js/main.js' %}"></script>
+
+<script>
+	function imgChange(obj){
+		var file = document.getElementById("file");
+		var imgUrl = window.URL.createObjectURL(file.files[0]);
+		var img = document.getElementById("imghead");
+		img.setAttribute("src",imgUrl);
+	}
+</script>
+</body>
+
+
+
+
+</html>
